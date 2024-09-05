@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <style>
+        
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(226, 225, 238);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
+}
+img{
+    width: 100%;
+}
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+section{
+    margin-left: 100px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 ;
+}
+.logo{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+#card-icon{
+    font-size: 30px;
+    font-weight: 600px;
+    cursor: pointer;
+}
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: rgb(7, 214, 76);
+    box-shadow: -20x 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.3s;
+}
+.cart.active{
+    right: 0;
+}
+.cart-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+.detail-box{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.cart-product-title{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.cart-price{
+    font-weight: 500;
+}
+.cart-qauntity{
+    border: 1px solid black;
+    outline-color: orange ;
+    width: 2.4rem;
+    font-size: 1rem;
+}
+.cart-remove{
+    font-size: 24px;
+    color: orangered;
+    cursor: pointer;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+}
+#closed-cart{
+    position: absolute;
+    top:1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+}
+.section-title{
+    margin: 100px;
+    margin-bottom: -10px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+.card-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.shop{
+    margin: 20px;
+}
+.shop-content{
+    margin: 10px;
+    padding: 0 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,auto));
+    gap: 20px;
+}
+.product-box{
+    position: relative;
+    margin-left: 80px;
+    margin-right: -80px;
+}
+.product-img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.product-title{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.price{
+    font-weight: 600;
+}
+.add-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+.btn-buy{
+    background-color: orangered;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+.btn-buy:hover{
+    color: black;
+}
+body{
+    background-color:rgb(243, 245, 245);
+}
+        header{
+            position: scroll;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: white;
+            box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+            z-index: 100;
+            padding: 5px;
+            
+        }
+        .container{
+            margin:10px 20px;
+            margin-top: 30px;
+        }
+        .store-card{
+            margin-top: 30px;
+            display: inline-block;
+            width: 300px;
+            height: auto;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 20px;
+        }
+        .store-card h1{
+            text-align: center;
+            margin: 10px;
+        }
+        .store-card img{
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            margin-left: 20px;
+        }
+        .store-card a button{
+            margin: 20px;
+            width: 200px;
+            height: 30px;
+            margin-left: 40px;
+            background-color: rgb(52, 52, 176);
+            color: white;
+            border: 1px solid rgb(52, 52, 176);
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .store-card a button:hover{
+            background-color: rgb(5, 5, 86);
+            color: white;
+        }
+        .logo{
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            color: black;
+        }
+        #card-icon{
+            font-size: 30px;
+            font-weight: 600px;
+            cursor: pointer;
+            float: right;
+            margin-right: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav container">
+           <a href="#" class="logo">EVERYTHING FOR YOU</a>
+           <i class='bx bx-shopping-bag' id="card-icon"></i>
+           <div class="cart">
+               <h2 class="card-title">Your cart</h2>
+               <div class="cart-content">
+                   
+               </div>
+               <div class="total">
+                   <div class="total-title">Total</div>
+                   <div class="total-price">$0</div>
+               </div>
+               <button type="button" class="btn-buy">Buy Now</button>
+               <i class='bx bx-x' id="closed-cart"></i>
+           </div>
+       </div>
+       
+       </header>
+    <div class="nav container">
+        <a href="#" class="logo">EVERYTHING FOR YOU</a>
+        <i class='bx bx-shopping-bag' id="card-icon"></i>
+    </div>
+    </header>
+    <div class="container">
+    <div class="store-card">
+        <h1>Women's Store</h1>
+        <img src="Product-1.jpg" alt="">
+        <a href="womens-store.html"><button>View Items</button></a>
+    </div>
+
+    <div class="store-card">
+        <h1>Men's Store</h1>
+        <img src="formal.jpg" alt="">
+        <a href="mens-store.html"><button>View Items</button></a>
+    </div>
+
+    <div class="store-card">
+        <h1>Mobiles Store</h1>
+        <img src="apple.jpg" alt="">
+        <a href="mobiles.html"><button>View Items</button></a>
+    </div>
+
+     
+    <script src="main.js"></script>
+</div>
+</body>
+</html>

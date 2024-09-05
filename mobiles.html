@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgb(226, 225, 238);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
+}
+img{
+    width: 100%;
+}
+.container{
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+section{
+    margin-left: 100px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 ;
+}
+.logo{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+#card-icon{
+    font-size: 30px;
+    font-weight: 600px;
+    cursor: pointer;
+}
+.cart{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: rgb(7, 214, 76);
+    box-shadow: -20x 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.3s;
+}
+.cart.active{
+    right: 0;
+}
+.cart-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+.cart-box{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+.detail-box{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.cart-product-title{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+.cart-price{
+    font-weight: 500;
+}
+.cart-qauntity{
+    border: 1px solid black;
+    outline-color: orange ;
+    width: 2.4rem;
+    font-size: 1rem;
+}
+.cart-remove{
+    font-size: 24px;
+    color: orangered;
+    cursor: pointer;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid black;
+}
+#closed-cart{
+    position: absolute;
+    top:1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+}
+.section-title{
+    margin: 100px;
+    margin-bottom: -10px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+.card-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.shop{
+    margin: 20px;
+}
+.shop-content{
+    margin: 10px;
+    padding: 0 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,auto));
+    gap: 20px;
+}
+.product-box{
+    position: relative;
+    margin-left: 80px;
+    margin-right: -80px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.product-img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.product-title{
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.price{
+    font-weight: 600;
+}
+.add-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    background: black;
+    color: white;
+}
+.btn-buy{
+    background-color: orangered;
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+.btn-buy:hover{
+    color: black;
+}
+body{
+    background-color:rgb(247, 249, 249);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav container">
+           <a href="#" class="logo">EVERYTHING FOR YOU</a>
+           <i class='bx bx-shopping-bag' id="card-icon"></i>
+           <div class="cart">
+               <h2 class="card-title">Your cart</h2>
+               <div class="cart-content">
+                   
+               </div>
+               <div class="total">
+                   <div class="total-title">Total</div>
+                   <div class="total-price">$0</div>
+               </div>
+               <button type="button" class="btn-buy">Buy Now</button>
+               <i class='bx bx-x' id="closed-cart"></i>
+           </div>
+       </div>
+       <hr width="100%" height="2%">
+       </header>
+    <section class="shop container">
+        <h2 class="section-title">Mobiles Store</h2>
+        <div class="shop-content">
+         <div class="product-box">
+             <img src="redmi.jpg" alt="" class="product-img">
+             <h2 class="product-title">Redmi</h2>
+             <span class="price">Rs.30,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" ></i>
+         </div>
+         <div class="product-box">
+             <img src="samsung.jpg" alt="" class="product-img">
+             <h2 class="product-title">Samsung</h2>
+             <span class="price">Rs.25,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" ></i>
+         </div>
+         <div class="product-box">
+             <img src="oppo.jpg" alt="" class="product-img">
+             <h2 class="product-title">Oppo</h2>
+             <span class="price">Rs.25,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" ></i>
+         </div>
+         <div class="product-box">
+             <img src="oneplus.jpg" alt="" class="product-img">
+             <h2 class="product-title">OnePlus</h2>
+             <span class="price">Rs.20,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" margin="10px"></i>
+         </div>
+         <div class="product-box">
+             <img src="apple.jpg" alt="" class="product-img">
+             <h2 class="product-title">Apple</h2>
+             <span class="price">Rs.1,50,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" ></i>
+         </div>
+         <div class="product-box">
+             <img src="poco.jpg" alt="" class="product-img">
+             <h2 class="product-title">Poco</h2>
+             <span class="price">Rs.30,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" ></i>
+         </div>
+         <div class="product-box">
+             <img src="google.jpg" alt="" class="product-img">
+             <h2 class="product-title">Google</h2>
+             <span class="price">Rs.35,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" ></i>
+         </div>
+         <div class="product-box">
+             <img src="note.jpg" alt="" class="product-img">
+             <h2 class="product-title">Redmi Note</h2>
+             <span class="price">Rs.25,000</span>
+             <i class='bx bx-shopping-bag add-cart' id="card-icon" ></i>
+         </div>
+        </div>
+     </section>
+
+     <script src="main.js"></script>
+</body>
+</html>
